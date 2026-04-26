@@ -1,0 +1,10 @@
+{
+  "todos": [
+    {
+      "id": "intro-1",
+      "text": "Bem-vindo ao Kanban! Apague esta tarefa para começar.",
+      "status": "notStarted",
+      "priority": "baixa"
+    }
+  ]
+}
