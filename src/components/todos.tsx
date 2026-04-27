@@ -62,7 +62,7 @@ function KanbanColumn({
 
     return (
         <div 
-        className={`h-full w-[280px] p-5 rounded-xl flex gap-3 flex-col ${bgColumnClass} transition-all duration-200 ${highlightClasses}`}
+        className={`h-full w-[280px] p-5 rounded-xl flex gap-3 flex-col ${bgColumnClass} ${title == 'Concluídas' ? 'border-1 border-[#67E8F9]/20' : 'border-1 border-[#8A43F0]/20'} transition-all duration-200 ${highlightClasses}`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
