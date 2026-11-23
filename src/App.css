@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-paper: #f7f9f8;
+  --color-panel: #ebf0ee;
+  --color-card: #ffffff;
+  --color-line: #d3dedb;
+  --color-ink: #06525c;
+  --color-muted: #2f737d;
+  --color-danger: #b91c1c;
+  --color-shade: rgb(6 82 92);
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, Consolas, monospace;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #0a1315;
+  --color-panel: #111d20;
+  --color-card: #172629;
+  --color-line: #26393d;
+  --color-ink: #e2eeed;
+  --color-muted: #8db0b2;
+  --color-danger: #f87171;
+  --color-shade: rgb(0 0 0);
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+dialog::backdrop {
+  background: color-mix(in srgb, var(--color-shade) 45%, transparent);
+}

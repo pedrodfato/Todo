@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    command: sh -c "[ -f data/db.json ] || cp db.example.json data/db.json; npx json-server data/db.json --port 5000 --host 0.0.0.0"
+    ports: ["5000:5000"]
+    volumes: ["./data:/app/data"]
+  web:
+    build: .
+    command: npx vite --host 0.0.0.0
+    ports: ["5173:5173"]
+    depends_on: [api]
